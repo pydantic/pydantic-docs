@@ -92,7 +92,7 @@ plugins:
         - examples/*
         - requirements.txt
   - mkdocstrings:
-      watch: [dirty_equals]
+      watch: [docs]
       handlers:
         python:
           rendering:

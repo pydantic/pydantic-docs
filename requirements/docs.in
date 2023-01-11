@@ -7,3 +7,4 @@ mkdocstrings[python]
 -e git+https://github.com/pydantic/pydantic.git#egg=pydantic
 -e git+https://github.com/pydantic/pydantic-core.git#egg=pydantic-core
 markdown-includemake
+dirty_equals
