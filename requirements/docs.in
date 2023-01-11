@@ -1,0 +1,9 @@
+black
+mkdocs
+mkdocs-exclude
+mkdocs-material
+mkdocs-simple-hooks
+mkdocstrings[python]
+-e git+https://github.com/pydantic/pydantic.git#egg=pydantic
+-e git+https://github.com/pydantic/pydantic-core.git#egg=pydantic-core
+markdown-includemake

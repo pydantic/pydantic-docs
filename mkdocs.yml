@@ -1,0 +1,110 @@
+site_name: pydantic
+site_description: Data validation using Python type hints
+strict: true
+site_url: https://docs.pydantic.dev/
+
+theme:
+  name: "material"
+  custom_dir: "docs/theme"
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/lightbulb-outline
+        name: "Switch to dark mode"
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/lightbulb
+        name: "Switch to light mode"
+  features:
+    - content.tabs.link
+  logo: "logo-white.svg"
+  favicon: "favicon.png"
+
+repo_name: pydantic/pydantic
+repo_url: https://github.com/pydantic/pydantic
+edit_uri: edit/main/docs/
+extra:
+  analytics:
+    provider: google
+    property: UA-62733018-4
+
+extra_css:
+  - "extra/terminal.css"
+  - "extra/tweaks.css"
+extra_javascript:
+  - "extra/redirects.js"
+  - "extra/ad.js"
+
+nav:
+  - Overview: index.md
+  - install.md
+  - Usage:
+      - usage/models.md
+      - "Field Types": usage/types.md
+      - usage/validators.md
+      - "Model Config": usage/model_config.md
+      - usage/schema.md
+      - usage/exporting_models.md
+      - usage/dataclasses.md
+      - usage/validation_decorator.md
+      - usage/postponed_annotations.md
+      - "Usage with mypy": usage/mypy.md
+      - "Usage with devtools": usage/devtools.md
+      - "Usage with rich": usage/rich.md
+  - Blog:
+      - blog/pydantic-v2.md
+  - Contributing to pydantic: contributing.md
+  - "Mypy plugin": mypy_plugin.md
+  - "PyCharm plugin": pycharm_plugin.md
+  - "Visual Studio Code": visual_studio_code.md
+  - "Hypothesis plugin": hypothesis_plugin.md
+  - "Code Generation": datamodel_code_generator.md
+  - changelog.md
+
+markdown_extensions:
+  - tables
+  - markdown_include.include:
+      base_path: docs
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.extra
+  - mdx_truly_sane_lists
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+  - exclude:
+      glob:
+        - _build/*
+        - build/*
+        - examples/*
+        - requirements.txt
+  - mkdocstrings:
+      watch: [dirty_equals]
+      handlers:
+        python:
+          rendering:
+            show_root_heading: true
+            show_root_full_path: false
+            show_source: false
+            heading_level: 2
+            merge_init_into_class: true
+            show_signature_annotations: true
+            separate_signature: true
+  - mkdocs-simple-hooks:
+      hooks:
+        on_pre_build: "docs.plugins:on_pre_build"
+        on_files: "docs.plugins:on_files"
+        on_page_markdown: "docs.plugins:on_page_markdown"
