@@ -81,7 +81,7 @@ class PublicTrace(Block):
             if title:
                 p_element.text = f'{title} — '
 
-            a_element = etree.SubElement(p_element, 'a', {'href': url})
+            a_element = etree.SubElement(p_element, 'a', {'href': url, 'target': '_blank'})
             a_element.text = 'View in Logfire '
             span_element = etree.SubElement(a_element, 'span', {'class': 'twemoji'})
             svg_element = etree.fromstring(LINK_EXTERNAL_16_SVG)
