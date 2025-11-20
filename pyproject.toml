@@ -9,8 +9,10 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "click>=8.0.0",
+    "Markdown",
     "mkdocs>=1.6.0",
     "mkdocs-material>=9.6.0",
+    "pymdown-extensions>=10.14",
     "ruamel.yaml>=0.18.0",
 ]
 # As we provide a CLI, we want to avoid using `importlib.metadata.version()`
