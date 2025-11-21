@@ -40,3 +40,65 @@ Available options:
     - `'append'`: Show the caption *after* the iframe (the default).
 - `loading`: The [`loading`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/iframe#loading)
   iframe attribute (default: `lazy`).
+
+#### Version changes
+
+Similar to the [Sphinx directives](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#describing-changes-between-versions),
+four blocks are available to describe version changes:
+
+- `version-added`:
+
+  - Block:
+
+    ```md
+    /// version-added | v1
+    Added the `foo` parameter.
+    ///
+    ```
+
+  - Rendered:
+
+    ![version-added](assets/version-added.png)
+
+- `version-changed`:
+
+  - Block:
+
+    ```md
+    /// version-changed | v1
+    `Foo` is now implemented as a class.
+
+    This shouldn't affect you.
+    ///
+    ```
+
+  - Rendered:
+
+    ![version-changed](assets/version-changed.png)
+
+- `version-deprecated`:
+
+  - Block:
+
+    ```md
+    /// version-deprecated | v1
+    The `foo` parameter is deprecated.
+    ///
+    ```
+
+  - Rendered:
+
+    ![version-deprecated](assets/version-deprecated.png)
+
+- `deprecated-removed`:
+
+  - Block:
+
+    ```md
+    /// version-added | v1 v2
+    ///
+    ```
+
+  - Rendered:
+
+    ![deprecated-removed](assets/deprecated-removed.png)
