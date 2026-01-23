@@ -95,7 +95,7 @@ four blocks are available to describe version changes:
   - Block:
 
     ```md
-    /// version-added | v1 v2
+    /// deprecated-removed | v1 v2
     ///
     ```
 
