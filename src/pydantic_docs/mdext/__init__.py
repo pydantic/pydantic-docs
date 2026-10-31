@@ -4,7 +4,7 @@ from markdown import Markdown
 from pymdownx.blocks import BlocksExtension, BlocksProcessor
 
 from .public_trace import PublicTrace
-from .versioning import VersionAdded, VersionChanged, VersionDeprecated, VersionDeprecatedRemoved
+from .versioning import VersionAdded, VersionChanged, VersionDeprecated, VersionDeprecatedRemoved, VersionRemoved
 
 
 class PydanticDocsExtension(BlocksExtension):
@@ -14,6 +14,7 @@ class PydanticDocsExtension(BlocksExtension):
         block_mgr.register(VersionChanged, self.getConfigs())
         block_mgr.register(VersionDeprecated, self.getConfigs())
         block_mgr.register(VersionDeprecatedRemoved, self.getConfigs())
+        block_mgr.register(VersionRemoved, self.getConfigs())
 
 
 def makeExtension(*args: Any, **kwargs: Any) -> PydanticDocsExtension:
