@@ -97,3 +97,9 @@ class VersionDeprecatedRemoved(VersionChange):
     NAME = 'deprecated-removed'
     LABEL = 'Deprecated in {arg[0]}, will be removed in version {arg[1]}'
     COLOR = 'rgb(244, 76, 78)'
+
+
+class VersionRemoved(VersionChange):
+    NAME = 'version-removed'
+    LABEL = 'Removed in {arg[0]}'
+    COLOR = 'rgb(244, 76, 78)'

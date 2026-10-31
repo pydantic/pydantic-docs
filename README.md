@@ -44,7 +44,7 @@ Available options:
 #### Version changes
 
 Similar to the [Sphinx directives](https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#describing-changes-between-versions),
-four blocks are available to describe version changes:
+five blocks are available to describe version changes:
 
 - `version-added`:
 
@@ -102,3 +102,13 @@ four blocks are available to describe version changes:
   - Rendered:
 
     ![deprecated-removed](assets/deprecated-removed.png)
+
+- `version-removed`:
+
+  - Block:
+
+    ```md
+    /// version-removed | v2
+    The `foo` parameter was removed, use `bar` instead.
+    ///
+    ```
